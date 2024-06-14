@@ -90,7 +90,8 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 20,
-    padding: 10,
+    paddingHorizontal: 20,
+    paddingVertical:10,
     elevation: 2,
   },
   buttonOpen: {
@@ -108,11 +109,11 @@ const styles = StyleSheet.create({
     width: 200,
     height: 40,
     borderRadius: 4,
-    color: 'darkgray',
+    color: 'black',
     borderWidth: 1,
-    borderColor: 'darkgray',
+    borderColor: 'black',
     marginBottom: 15,
-    textAlign: 'center',
+    paddingHorizontal:10
   },
   container: {
     alignSelf: 'center',

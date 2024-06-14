@@ -13,15 +13,14 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {TextInput} from 'react-native-gesture-handler';
 import DropDownPicker from 'react-native-dropdown-picker';
 
-
 export default function Category() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    {label: 'Apple', value: 'apple'},
-    {label: 'Banana', value: 'banana'}
+    {label: 'This for men', value: 'apple'},
+    {label: 'This for girl', value: 'banana'},
   ]);
   return (
     <View style={styles.centeredView}>
@@ -35,14 +34,16 @@ export default function Category() {
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-          <DropDownPicker
-      open={open}
-      value={value}
-      items={items}
-      setOpen={setOpen}
-      setValue={setValue}
-      setItems={setItems}
-    />
+            <View style={styles.drpicker}>
+              <DropDownPicker
+                open={open}
+                value={value}
+                items={items}
+                setOpen={setOpen}
+                setValue={setValue}
+                setItems={setItems}
+              />
+            </View>
 
             <TextInput style={styles.modalText}>Category</TextInput>
             <Pressable
@@ -59,35 +60,7 @@ export default function Category() {
         <Text style={styles.textStyle}>Add to cart</Text>
       </Pressable>
 
-      <View style={styles.mainSee}>
-        {/* <View style={styles.mainBtn}>
-          <Text style={styles.container}>Men</Text>
-          <View style={styles.iconMainveiw}>
-            <View>
-              <TouchableOpacity>
-              <FontAwesome name="edit" size={30} color="#2196F3" />
-              </TouchableOpacity>
-            </View>
-            <TouchableOpacity>
-            <MaterialIcons name="delete" size={30} color="black" />
-            </TouchableOpacity>
-          </View>
-        </View> */}
-
-        {/* <View style={styles.mainBtn}>
-          <Text style={styles.container}>Women</Text>
-          <View style={styles.iconMainveiw}>
-            <View>
-              <TouchableOpacity>
-              <FontAwesome name="edit" size={30} color="#2196F3" />
-              </TouchableOpacity>
-            </View>
-            <TouchableOpacity>
-            <MaterialIcons name="delete" size={30} color="black" />
-            </TouchableOpacity>
-          </View>
-        </View> */}
-      </View>
+      {/* <View style={styles.mainSee}></View> */}
     </View>
   );
 }
@@ -116,7 +89,8 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 20,
-    padding: 10,
+    paddingHorizontal: 20,
+    paddingVertical:10,
     elevation: 2,
   },
   buttonOpen: {
@@ -134,11 +108,12 @@ const styles = StyleSheet.create({
     width: 200,
     height: 40,
     borderRadius: 4,
-    color: 'darkgray',
+    color: 'black',
     borderWidth: 1,
-    borderColor: 'darkgray',
+    borderColor: 'black',
     marginBottom: 15,
-    textAlign: 'center',
+    paddingHorizontal:10,
+    marginTop:10
   },
   container: {
     alignSelf: 'center',
@@ -194,4 +169,7 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 16,
   },
+  drpicker:{
+    width:'80%',
+  }
 });
