@@ -28,7 +28,7 @@ export default function App() {
     <NavigationContainer>
       {/* <Drawer1 /> */}
       {/* <Switch1/> */}
-      {/* <SectionList1/> */}
+      {/* <SectionList1/> */}    
       {/* <BackHandler/> */}
       {/* <DrawerLayout/> */}
       {/* <PermissionsAndroiid/> */}
